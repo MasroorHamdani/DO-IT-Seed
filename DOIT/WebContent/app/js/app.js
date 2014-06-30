@@ -9,10 +9,22 @@ angular.module('myApp', [
   'myApp.directives',
   'ui.bootstrap',
   'myApp.controllers'
-]).
-config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
-  $routeProvider.when('/view1', {templateUrl: 'partials/view1.html', controller: 'MyCtrl1'});
+])
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+//  $locationProvider.html5Mode(true);
+  $routeProvider.
+  	when('/view1', {
+  		templateUrl: 'partials/view1.html', 
+  		controller: 'View1Cntrl'
+  			})
+  	.when('/partials/:projectId', {
+  	    templateUrl: 'partials/view2.html',
+  	    controller: 'MyCtrl2'
+  	})
+  	.
+      otherwise({
+        redirectTo: '/view1'
+      });;
 }]);
 
 angular.module('myApp').constant('appSettings', {

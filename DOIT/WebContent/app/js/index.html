@@ -14,9 +14,6 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/app.css"/>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body ng-app="myApp" class="gray-bg">
@@ -37,11 +34,64 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
         </ul>
-        
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#myModal" data-toggle="modal" 
+ 				data-target="#myModal">Create Project</a></li>
+          <li><a href="#/view2">View 2</a></li>
+        </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-	
+<div id="myModal" class="modal fade">
+	    			<div class="modal-dialog">
+						<div class="modal-content">
+			    			<div class="modal-header">
+			        			<button type="button" class="close" data-dismiss="modal"
+			         				aria-hidden="true">&times;</button>
+			        			<h4 class="modal-title">Contact Us Form</h4>
+			    			</div>
+			    			<form>
+			    				<div class="modal-body">
+			    					<div class="form-group">
+									   <label for="inputName text-left">Name</label><span id="infotext">*</span>
+									   <input type="text" class="form-control" id="inputName" placeholder="Enter Name">
+										<div class="spanErrorMsgs" id="spanName"></div>
+									</div>
+									<div class="form-group">
+									   <label for="inputEmail">Email</label><span id="infotext">*</span>
+									   <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email">
+										<div class="spanErrorMsgs" id="spanEmail"></div>
+									</div>
+									<div class="form-group">
+									    <label for="inputContactNo">Contact No</label><span id="infotext">*</span>
+									    <input type="text" class="form-control" id="inputContactNo" placeholder="Enter Contact">
+										<div class="spanErrorMsgs" id="spanContact"></div>
+									</div>
+									<div class="form-group">
+									   <label for="inputFromDate">From Date</label><span id="infotext">*</span>
+									   <input type="text" class="form-control" id="inputFromDate" placeholder="DD-MM-YYYY">
+										<div class="spanErrorMsgs" id="spanFromDate"></div>
+									</div>
+									<div class="form-group">
+									   <label for="inputToDate">To Date</label><span id="infotext">*</span>
+									   <input type="text" class="form-control" id="inputToDate" placeholder="DD-MM-YYYY">
+										<div class="spanErrorMsgs" id="spanToDate"></div>
+									</div>
+									<div class="form-group">
+									   <label for="inputAddress">Address</label><span id="infotext">*</span>
+									   <textarea class="form-control" id="inputAddress" placeholder="Enter your Address">
+									   </textarea>
+										<div class="spanErrorMsgs" id="spanAddress"></div>
+									</div>
+								</div>
+								<div class="modal-footer">
+			        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        				<button type="button" class="btn btn-primary" id="btnSent">Sent</button>
+			    				</div>
+							   </form>
+						</div>
+	    			</div>
+			</div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -61,9 +111,5 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  
 </body>
 </html>
-
