@@ -105,25 +105,25 @@
 									<td>{{task.status}}</td>
 									<td>{{task.taskName}}</td>
 									<td>
-										<div ng-if = "task.status !== 'done'"> 
+										<div ng-if = "task.status === 'pending'"> 
 											<a href="#"  data-toggle="modal" 
  												data-target="#myModal">Edit</a>
  												|
- 											<a href="#">Complete</a>|
- 											<a ng-click="closeFunction(task.status)">Close</a>
+ 											<a ng-click="task.status='done'">Complete</a>|
+ 											<a ng-click="task.status='close'">Close</a>
  										</div>
  									</td>
 								</tr>
 								<tr>
 									<td rowspan="4" ng-switch="task.status">
 										<div ng-switch-when="done">
-											<img src="img/pencil_small.png"/>
-										</div>
-										<div ng-switch-when="pending">
 											<img src="img/gmail_small.png"/>
 										</div>
-										<div ng-switch-when="close">
+										<div ng-switch-when="pending">
 											<img src="img/pencil_small.png"/>
+										</div>
+										<div ng-switch-when="close">
+											<img src="img/gmail_small.png"/>
 										</div>
 									</td>
 									<td rowspan="4">{{task.Desc}}</td>

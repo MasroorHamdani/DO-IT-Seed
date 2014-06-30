@@ -22,11 +22,6 @@ angular.module('myApp.controllers', [])
  			  $scope.details=$scope.projectDetails[i];
  		  }
  	  }
- 	 $scope.closeFunction= function(status){
- 		 console.log("close " + status);
- 		  $scope.status="close";
- 		console.log("close " + $scope.status);
- 	  };
  	  $scope.submit = function(form) {
  		  var task={
  				"taskName":form.taskName,
