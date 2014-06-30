@@ -1,7 +1,7 @@
 <div class="jumbotron"> 
 	<ul class="nav navbar-nav navbar-right">
-          <li><a href="#" data-toggle="modal" 
- 				data-target="#myModal">Create Task</a></li>
+          <li><a data-toggle="modal" 
+ 				data-target="#myTaskModal">Create Task</a></li>
     </ul>
 	<div id="myTaskModal" class="modal fade">
 		<div class="modal-dialog">
@@ -16,7 +16,7 @@
 	            		<div class="form-group">
 				        	<label for="inputTaskName">Task Name</label>
 				           	<input type="text" class="form-control" id="inputTaskName"
-				           	 placeholder="Enter Task Name" ng-model="projectDetais.taskName">
+				           	 placeholder="Enter Task Name" ng-model="projectDetails.taskName">
 					   		
 						</div>
 						<div class="form-group">
@@ -29,7 +29,7 @@
 						<label for="inputColList">Priority</label>
 						    <select class="form-control" id="inputColList" ng-model="projectDetails.priority">
 						    <option value="1">Shows Topper</option>
-						    <option value="2">High</option>
+						    <option value="2" selected>High</option>
 						    <option value="3">Medium</option>
 						    <option value="4">Low</option>
 						    </select>
@@ -37,8 +37,9 @@
 						<div class="form-group">
 						<label for="inputColList">Status</label>
 						    <select class="form-control" id="inputColList" ng-model="projectDetails.status">
-						    <option value="1">Created</option>
-						    <option value="2">Completed</option>
+						    <option value="1" selected>Opened</option>
+						    <option value="2">Created</option>
+						    <option value="3">Completed</option>
 						    </select>
 						</div>
 						<div class="form-group">
@@ -59,7 +60,7 @@
 			        <div class="modal-footer">
 	         			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	            		<button type="button" class="btn btn-primary" data-dismiss="modal"
-	            		id="btnSent" data-ng-click="submit(projectDetails)">Add Task</button>
+	            		id="btnSent" data-ng-click="submitTask(projectDetails)">Add Task</button>
 	            	</div>
 				</form>
 	        </div>
@@ -106,8 +107,8 @@
 									<td>{{task.taskName}}</td>
 									<td>
 										<div ng-if = "task.status === 'pending'"> 
-											<a href="#"  data-toggle="modal" 
- 												data-target="#myModal">Edit</a>
+											<a data-toggle="modal" 
+ 												data-target="#myTaskEditModal">Edit</a>
  												|
  											<a ng-click="task.status='done'">Complete</a>|
  											<a ng-click="task.status='close'">Close</a>
@@ -140,7 +141,18 @@
 		</tr>
 	</table>
 </div>
-
+<div id="myTaskEditModal" class="modal fade">
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	        	<div class="modal-header">
+	            	<button type="button" class="close" data-dismiss="modal"
+	                	>&times;</button>
+	                <h4 class="modal-title">Create Task</h4>
+	            </div>
+	        </div>
+	    </div>
+</div>
+	            
 
 
 

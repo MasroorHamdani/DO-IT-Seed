@@ -80,7 +80,7 @@ angular.module('myApp.services', [])
 	                                       "dueDate": "21/12/2013",
 	                                       "priority": "2",
 	                                       "status":"done",
-	                                       "assignTo":"Rahul",
+	                                       "assignTo":"Nagraj",
 	                                        "role": "Developer"
 	                                       
 	                                   }

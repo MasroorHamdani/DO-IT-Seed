@@ -6,11 +6,11 @@ angular.module('myApp.controllers', [])
   .controller('View1Cntrl', ['$scope', 'MyService', function($scope, MyService) {
 	  $scope.projects = MyService.list();
 	  $scope.submit = function(form) {
-    	 var task={"projectName":form.projectName,
+    	 var project={"projectName":form.projectName,
     			 "projectDescription":form.projectDescription,
     			 "projectCordinators":[form.projectCordinators]
     	 };
-    	 $scope.projects.push(task);
+    	 $scope.projects.push(project);
      }; 
   }])
   .controller('MyCtrl2', ['$scope','$routeParams','MyTaskDetailsService', function($scope,
@@ -22,8 +22,9 @@ angular.module('myApp.controllers', [])
  			  $scope.details=$scope.projectDetails[i];
  		  }
  	  }
- 	  $scope.submit = function(form) {
- 		  var task={
+ 	  
+ 	  $scope.submitTask = function(form) {
+ 		  var task=[{
  				"taskName":form.taskName,
 	 			"Desc":form.Desc,
 	 			"createdAt": "21/12/2013",
@@ -33,7 +34,9 @@ angular.module('myApp.controllers', [])
 	            "status":form.status,
 	            "assignTo":form.assignTo,
 	             "role": "Developer"
- 		 };
+ 		 }];
+ 		 console.log(task);
+ 		 
  		 $scope.projectDetails.push(task);
  	  };
   }]);
